@@ -20,7 +20,13 @@
 */
 package org.springfield.lou.application.types;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springfield.fs.Fs;
+import org.springfield.fs.FsNode;
 import org.springfield.lou.application.Html5Application;
+import org.springfield.lou.screen.Capabilities;
 import org.springfield.lou.screen.Screen;
 
 /**
@@ -33,6 +39,8 @@ import org.springfield.lou.screen.Screen;
  */
 public class PhotoexhibitionApplication extends Html5Application {
 
+ 	private static final String themeBaseUri = "/domain/espace/user/photoexhibition/collection/";
+	
 	public PhotoexhibitionApplication(String id) {
 		super(id);
 	}
@@ -43,24 +51,38 @@ public class PhotoexhibitionApplication extends Html5Application {
 	
 	public void onNewScreen(Screen s) {
 		String role = s.getParameter("role");
-    	
-		if (role == null) {
-    		role = "";
-    	}
+    	role = role == null ? "" : role;
 		
+		Capabilities caps = s.getCapabilities();
+		int device = caps.getDeviceMode();
 		
-		if (role.equals("main")) {
-			//main screens
-			this.loadContent(s, "mainscreen");
-			
-		} else {
+		if (device != caps.MODE_GENERIC || role.equals("mobile")) {
 			//second screens
+			loadStyleSheet(s,"mobile");
+			s.setRole("mainscreen");
 			this.loadContent(s, "secondscreen");
 			
+			loadThemes();
+		} else {
+			//main screens
+			loadStyleSheet(s,"generic");
+			s.setRole("mainscreen");
+			this.loadContent(s, "mainscreen");
 		}
 	}
 	
 	public void putOnScreen(Screen s, String from, String msg) {
 		
 	}
+	
+	private List<FsNode> loadThemes() {
+    	List<FsNode> collections = Fs.getNodes(themeBaseUri,1);
+    	
+    	List<FsNode> themes = new ArrayList<FsNode>();
+    	for (FsNode collection: collections) {
+    			themes.add(collection); 	
+    			System.out.println("theme "+collection.getProperty("title"));
+    	}
+    	return themes;
+    }
 }
