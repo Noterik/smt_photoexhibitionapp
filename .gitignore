@@ -1,0 +1,10 @@
+#ignore build directories
+build/
+
+#ignore war directories
+dist/
+
+*.class
+/bin/
+
+.DS_Store
