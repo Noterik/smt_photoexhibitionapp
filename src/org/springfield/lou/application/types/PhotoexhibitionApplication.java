@@ -42,8 +42,22 @@ public class PhotoexhibitionApplication extends Html5Application {
  	}
 	
 	public void onNewScreen(Screen s) {
-
-		this.loadContent(s, "mainscreen");
+		String role = s.getParameter("role");
+    	
+		if (role == null) {
+    		role = "";
+    	}
+		
+		
+		if (role.equals("main")) {
+			//main screens
+			this.loadContent(s, "mainscreen");
+			
+		} else {
+			//second screens
+			this.loadContent(s, "secondscreen");
+			
+		}
 	}
 	
 	public void putOnScreen(Screen s, String from, String msg) {
