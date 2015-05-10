@@ -134,7 +134,34 @@ public class PhotoexhibitionApplication extends Html5Application {
 		s.removeContent("mapPage");
 		this.loadContent(s,"bluePage");
 		s.setDiv("returnToMainScreen", "bind:mousedown", "removeBluePage", this);
+		
+		s.setDiv("cloud1Blue","bind:mousedown","sound1",this);
+		s.setDiv("cloud2Blue","bind:mousedown","sound2",this);
+		s.setDiv("cloud3Blue","bind:mousedown","sound3",this);
+		s.setDiv("cloud4Blue","bind:mousedown","sound4",this);
+		s.setDiv("cloud5Blue","bind:mousedown","sound5",this);
+		s.setDiv("cloud6Blue","bind:mousedown","sound6",this);
+		
+	}
 	
+	public void sound1(Screen s, String name){
+		s.setDiv("cloud1Blue","sound:pew");
+	}
+	
+	public void sound2(Screen s, String name){
+		s.setDiv("cloud2Blue","sound:pew");
+	}
+	public void sound3(Screen s, String name){
+		s.setDiv("cloud3Blue","sound:pew");
+	}
+	public void sound4(Screen s, String name){
+		s.setDiv("cloud4Blue","sound:pew");
+	}
+	public void sound5(Screen s, String name){
+		s.setDiv("cloud5Blue","sound:pew");
+	}
+	public void sound6(Screen s, String name){
+		s.setDiv("cloud6Blue","sound:pew");
 	}
 	
 	public void removeGreenPage(Screen s, String name){
@@ -154,5 +181,8 @@ public class PhotoexhibitionApplication extends Html5Application {
 		this.loadContent(s,"mapPage");
 		switchToScreen(s);
 	}
+	
+	
+	
 
 }

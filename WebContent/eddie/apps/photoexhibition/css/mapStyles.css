@@ -1,4 +1,4 @@
-  .playing {
+.playing {
             position:fixed;
             top:0%;
             left:0%;
@@ -59,15 +59,6 @@
             background-color:#FF6600;
             border:1px solid #000000
         }
-        .button5 {
-            position:fixed;
-            bottom:5%;
-            left:40%;
-            width:20%;
-            height:30px;
-            background-color:#FF6600;
-            border:1px solid #000000;
-        }
         .hotspot1 {
             position:fixed;
             top:36%;
@@ -90,57 +81,47 @@
         }
         .hotspot3 {
             position:fixed;
-            top:64%;
-            right:22%;
+            top:80%;
+            left:50%;
             width:10%;
             height:7%;
             background-color:#1b35e4;
             border-radius:50% 50%;
             border:1px solid #000000;
         }
-        .hotspot4 {
-            position:fixed;
-            bottom:15%;
-            left:45%;
-            width:10%;
-            height:7%;
-            border-radius:50% 50%;
-            background-color:#de4dcd;
-            border:1px solid #000000;
-        }
         .cloud1{
             position:fixed;
-            top:52%;
-            right:15%;
-            width:3%;
-            height:6%;
+            top:90%;
+            left:35%;
+            width:8%;
+            height:3%;
             background-color:#ff6a00;
             border:1px solid #000000;
         }
         .cloud2 {
             position:fixed;
-            top:60%;
-            right:15%;
-            width:3%;
-            height:6%;
+            top:90%;
+            left:45%;
+            width:8%;
+            height:3%;
             background-color:#ff6a00;
             border:1px solid #000000;
         }
         .cloud3 {
             position:fixed;
-            top:68%;
-            right:15%;
-            width:3%;
-            height:6%;
+            top:90%;
+            right:35%;
+            width:8%;
+            height:3%;
             background-color:#ff6a00;
             border:1px solid #000000;
         }
         .cloud4 {
             position:fixed;
-            top:76%;
-            right:15%;
-            width:3%;
-            height:6%;
+            top:90%;
+            right:25%;
+            width:8%;
+            height:3%;
             background-color:#ff6a00;
             border:1px solid #000000;
         }
