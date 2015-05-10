@@ -1,3 +1,150 @@
 #synctime {
 	display: none;
 }
+
+div#touchSwipe {
+  width: 90%;
+  height: 10em;
+  background: red;
+}
+
+.back {
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 12%;
+            background-image: url("../img/back.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .cloud1Blue{
+            position:fixed;
+            top:30%;
+            left:10%;
+            width:15%;
+            height:10%;
+            background-color:#c4e2e1;
+            border:1px solid #000000;
+            border-radius:20%;
+        }
+        .cloud2Blue {
+            position:fixed;
+            top:55%;
+            left:5%;
+            width:20%;
+            height:25%;
+            background-color:#c4e2e1;
+            border:1px solid #000000;
+            border-radius:20%;
+        }
+        .cloud3Blue {
+            position:fixed;
+            top:60%;
+            left:30%;
+            width:30%;
+            height:20%;
+            background-color:#c4e2e1;
+            border:1px solid #000000;
+            border-radius:20%;
+        }
+        .cloud4Blue {
+            position:fixed;
+            top:38%;
+            left:33%;
+            width:25%;
+            height:15%;
+            background-color:#c4e2e1;
+            border:1px solid #000000;
+            border-radius:20%;
+        }
+        .cloud5Blue {
+            position:fixed;
+            top:58%;
+            right:13%;
+            width:15%;
+            height:20%;
+            background-color:#c4e2e1;
+            border:1px solid #000000;
+            border-radius:20%;
+        }
+        .cloud6Blue {
+            position:fixed;
+            top:25%;
+            right:5%;
+            width:30%;
+            height:25%;
+            background-color:#c4e2e1;
+            border:1px solid #000000;
+            border-radius:20%;
+        }
+        .infoText {
+            position:fixed;
+            top:85%;
+            left:30%;
+            width:100%;
+            height:12%;
+        }
+        .infoTextCont {
+            position:fixed;
+            top:90%;
+            left:10%;
+            width:20%;
+            height:15%;
+        }
+        
+        
+        #redSetup .border, #greenPage .border{
+            position:fixed;
+            top:15%;
+            left:4%;
+            width:92%;
+            height:70%;
+            background-color:#c4e2e1;
+            border:1px solid #000000;
+        }
+        
+        .zoom {
+            position:fixed;
+            top:30%;
+            left:25%;
+            width:50%;
+            height:50%;
+            background-image:url("/eddie/apps/photoexhibition/img/zoom_move.png");
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:contain;
+        }
+        
+        
+        .swipe_left {
+            position:fixed;
+            top:16%;
+            left:5%;
+            width:50%;
+            height:68%;
+            background-color:transparent;
+            border:0px;
+            background-image:url("/eddie/apps/photoexhibition/img/swipe_left.png");
+            background-repeat:no-repeat;
+            background-size:auto;
+            background-position-x:left;
+            background-position-y:center;
+        }
+        .swipe_right {
+            position:fixed;
+            top:16%;
+            left:55%;
+            width:41%;
+            height:68%;
+            border:0px;
+            background-color:transparent;
+            background-image:url("/eddie/apps/photoexhibition/img/swipe_right.png");
+            background-repeat:no-repeat;
+            background-size:inherit;
+            background-position-x:right;
+            background-position-y:center;
+        }
+        
+        

@@ -51,8 +51,9 @@ public class PhotoexhibitionApplication extends Html5Application {
 	
 	public void onNewScreen(Screen s) {
 		String role = s.getParameter("role");
-    	role = role == null ? "" : role;
+//		for testing only should be changed afterwards
 		
+    	role = role == null ? "" : role;
 		Capabilities caps = s.getCapabilities();
 		int device = caps.getDeviceMode();
 		
@@ -62,17 +63,21 @@ public class PhotoexhibitionApplication extends Html5Application {
 			s.setRole("mainscreen");
 			this.loadContent(s, "secondscreen");
 			
-			loadThemes();
+			loadThemes();				
+			
+			loadMapPage(s);
+			
 		} else {
 			//main screens
 			loadStyleSheet(s,"generic");
 			s.setRole("mainscreen");
 			this.loadContent(s, "mainscreen");
+			
+//			loadMapPage(s);
+			
 		}
-	}
-	
-	public void putOnScreen(Screen s, String from, String msg) {
 		
+			
 	}
 	
 	private List<FsNode> loadThemes() {
@@ -85,4 +90,69 @@ public class PhotoexhibitionApplication extends Html5Application {
     	}
     	return themes;
     }
+	
+	public void loadMapPage(Screen s){
+		loadStyleSheet(s, "mapStyles");
+		String mapScreen = s.getParameter("mapScreen");
+		String screenSetup = s.getParameter("screenSetup");
+		
+    	mapScreen = mapScreen == null ? "" : mapScreen;
+    	screenSetup = screenSetup == null ? "green" : screenSetup;
+    	
+		if(mapScreen!=null && "true".equals(mapScreen)){
+			this.removeContent(s,"mainArea");
+			this.loadContent(s, "mapPage");	
+			switchToScreen(s);
+			
+		} 
+	}
+	
+	
+	public void switchToScreen(Screen s) {
+			s.setDiv("green", "bind:mousedown", "greenPage", this);
+			s.setDiv("red", "bind:mousedown", "redPage", this);
+			s.setDiv("blue", "bind:mousedown", "bluePage", this);
+	}
+	
+	
+	public void greenPage(Screen s, String name) {
+		s.removeContent("mapPage");
+		this.loadContent(s,"greenPage");
+		s.setDiv("returnToMainScreen", "bind:mousedown", "removeGreenPage", this);
+	
+	}
+	
+	public void redPage(Screen s, String name) {
+		s.removeContent("mapPage");
+		this.loadContent(s,"redPage");
+		s.setDiv("returnToMainScreen", "bind:mousedown", "removeRedPage", this);
+	}
+	
+	
+	
+	public void bluePage(Screen s, String name) {
+		s.removeContent("mapPage");
+		this.loadContent(s,"bluePage");
+		s.setDiv("returnToMainScreen", "bind:mousedown", "removeBluePage", this);
+	
+	}
+	
+	public void removeGreenPage(Screen s, String name){
+		s.removeContent("greenPage");
+		this.loadContent(s,"mapPage");
+		switchToScreen(s);
+	}
+	
+	public void removeRedPage(Screen s, String name){
+		s.removeContent("redPage");
+		this.loadContent(s,"mapPage");
+		switchToScreen(s);
+	}
+	
+	public void removeBluePage(Screen s, String name){
+		s.removeContent("bluePage");
+		this.loadContent(s,"mapPage");
+		switchToScreen(s);
+	}
+
 }
